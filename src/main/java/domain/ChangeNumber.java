@@ -10,12 +10,18 @@ public class ChangeNumber {
 
     public ChangeNumber(String input) {
         validateWhitespace(input);
+        validateSize(input);
         List<Integer> numbers = numberParser.parseNumber(input);
         validateRange(numbers);
         validateDuplicate(numbers);
         this.changeNumber = numbers;
     }
 
+    private static void validateSize(String input) {
+        if(input.length() == 1 || input.length() > 5) {
+            throw new IllegalArgumentException("잘못 입력하셨습니다. 다시 입력해 주세요.");
+        }
+    }
 
     private static void validateWhitespace(String input) {
         if (input.startsWith(" ")) {
