@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RandomNumber {
+    private static final Integer MIN_NUMBER = 1;
+    private static final Integer MAX_NUMBER = 8;
 
     private final List<Integer> randomNumber;
 
@@ -14,10 +16,9 @@ public class RandomNumber {
         this.randomNumber = createNumber();
     }
 
-    ;
 
     private static List<Integer> createNumber() {
-        List<Integer> numbers = IntStream.rangeClosed(1, 8).boxed().collect(Collectors.toList());
+        List<Integer> numbers = IntStream.rangeClosed(MIN_NUMBER, MAX_NUMBER).boxed().collect(Collectors.toList());
 
         Collections.shuffle(numbers);
 
@@ -36,8 +37,8 @@ public class RandomNumber {
         Collections.swap(randomNumber, firstIndex, secondIndex);
     }
 
-    public boolean checkNumber(){
-        List<Integer> answerNumber = Arrays.asList(1,2,3,4,5,6,7,8);
+    public boolean checkNumber() {
+        List<Integer> answerNumber = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
         return randomNumber.equals(answerNumber);
     }
 

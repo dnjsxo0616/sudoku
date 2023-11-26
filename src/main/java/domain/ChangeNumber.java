@@ -5,6 +5,11 @@ import java.util.stream.Collectors;
 
 public class ChangeNumber {
 
+    private static final Integer MIN_SIZE = 1;
+    private static final Integer MAX_SIZE = 5;
+    private static final Integer NUMBER_RANGE_MIX_SIZE = 1;
+    private static final Integer NUMBER_RANGE_MAX_SIZE = 8;
+
     private final List<Integer> changeNumber;
     private final NumberParser numberParser = new NumberParser();
 
@@ -18,7 +23,7 @@ public class ChangeNumber {
     }
 
     private static void validateSize(String input) {
-        if(input.length() == 1 || input.length() > 5) {
+        if(input.length() == MIN_SIZE || input.length() > MAX_SIZE) {
             throw new IllegalArgumentException("잘못 입력하셨습니다. 다시 입력해 주세요.");
         }
     }
@@ -31,7 +36,7 @@ public class ChangeNumber {
 
     private static void validateRange(List<Integer> changeNumber) {
         for (int number : changeNumber) {
-            if (number > 8 || number < 1) {
+            if (number > NUMBER_RANGE_MAX_SIZE || number < NUMBER_RANGE_MIX_SIZE) {
                 throw new IllegalArgumentException("숫자의 범위는 1~8이어야 합니다.");
             }
         }
