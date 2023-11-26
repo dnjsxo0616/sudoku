@@ -30,4 +30,15 @@ class ChangeNumberTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("숫자의 범위는 1~8이어야 합니다.");
     }
+
+    @Test
+    void changeNumber_숫자_입력_오류_테스트() {
+        assertThatThrownBy(()-> new ChangeNumber("2"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("잘못 입력하셨습니다. 다시 입력해 주세요.");
+
+        assertThatThrownBy(()-> new ChangeNumber("2,   3"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("잘못 입력하셨습니다. 다시 입력해 주세요.");
+    }
 }
