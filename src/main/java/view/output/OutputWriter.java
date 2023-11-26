@@ -8,7 +8,7 @@ public class OutputWriter {
         System.out.println(responseMessage.getMessage());
     }
 
-    public static void println(ResponseMessage responseMessage, int count){
+    public static void println(ResponseMessage responseMessage, int count) {
         System.out.println(responseMessage.getFormattedMessage(count));
     }
 

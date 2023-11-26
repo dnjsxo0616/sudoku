@@ -23,7 +23,7 @@ public class ChangeNumber {
     }
 
     private static void validateSize(String input) {
-        if(input.length() == MIN_SIZE || input.length() > MAX_SIZE) {
+        if (input.length() == MIN_SIZE || input.length() > MAX_SIZE) {
             throw new IllegalArgumentException("잘못 입력하셨습니다. 다시 입력해 주세요.");
         }
     }
