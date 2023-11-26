@@ -28,11 +28,10 @@ public class RandomNumber {
         return Collections.unmodifiableList(randomNumber);
     }
 
-    public void changePosition(ChangeNumber changeNumber) {
-        List<Integer> changeNumbers = changeNumber.getChangeNumber();
+    public void changePosition(List<Integer> changeNumber) {
 
-        int firstIndex = randomNumber.indexOf(changeNumbers.get(0));
-        int secondIndex = randomNumber.indexOf(changeNumbers.get(1));
+        int firstIndex = randomNumber.indexOf(changeNumber.get(0));
+        int secondIndex = randomNumber.indexOf(changeNumber.get(1));
 
         Collections.swap(randomNumber, firstIndex, secondIndex);
     }
