@@ -15,7 +15,7 @@ public class RandomNumber {
 
     ;
 
-    public List<Integer> createNumber() {
+    private static List<Integer> createNumber() {
         List<Integer> numbers = IntStream.rangeClosed(1, 8).boxed().collect(Collectors.toList());
 
         Collections.shuffle(numbers);
