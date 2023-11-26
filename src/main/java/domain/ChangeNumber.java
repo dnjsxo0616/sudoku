@@ -6,30 +6,16 @@ import java.util.stream.Collectors;
 public class ChangeNumber {
 
     private final List<Integer> changeNumber;
+    private final NumberParser numberParser = new NumberParser();
 
     public ChangeNumber(String input) {
         validateWhitespace(input);
-        List<Integer> numbers = parseNumber(input);
+        List<Integer> numbers = numberParser.parseNumber(input);
         validateRange(numbers);
         validateDuplicate(numbers);
         this.changeNumber = numbers;
     }
 
-    private List<Integer> parseNumber(String input) {
-        List<Integer> parseNumber = new ArrayList<>();
-        return Arrays.stream(input.split(","))
-                .map(String::trim)
-                .map(ChangeNumber::validateParseInt)
-                .collect(Collectors.toList());
-    }
-
-    private static Integer validateParseInt(String input) {
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("숫자로 변경할 수 없는 문자입니다.");
-        }
-    }
 
     private static void validateWhitespace(String input) {
         if (input.startsWith(" ")) {
