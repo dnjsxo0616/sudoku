@@ -34,9 +34,7 @@ public class RandomNumber {
         int firstIndex = randomNumber.indexOf(changeNumbers.get(0));
         int secondIndex = randomNumber.indexOf(changeNumbers.get(1));
 
-        Integer temp = randomNumber.get(firstIndex);
-        randomNumber.set(firstIndex, randomNumber.get(secondIndex));
-        randomNumber.set(secondIndex, temp);
+        Collections.swap(randomNumber, firstIndex, secondIndex);
     }
 
     public boolean checkNumber(){
