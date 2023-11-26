@@ -12,6 +12,10 @@ public class OutputWriter {
         System.out.println(responseMessage.getFormattedMessage(count));
     }
 
+    public static void println(String message) {
+        System.out.println(message);
+    }
+
     public static void printNewLine() {
         System.out.println();
     }
