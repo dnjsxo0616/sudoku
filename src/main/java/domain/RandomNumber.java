@@ -24,7 +24,7 @@ public class RandomNumber {
     }
 
     public List<Integer> getRandomNumber() {
-        return randomNumber;
+        return Collections.unmodifiableList(randomNumber);
     }
 
 }
