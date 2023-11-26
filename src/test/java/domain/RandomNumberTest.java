@@ -20,7 +20,7 @@ class RandomNumberTest {
     public void 자리_변경_테스트() {
         List<Integer> beforeChange = new ArrayList<>(randomNumber.getRandomNumber());
 
-        randomNumber.changePosition(new ChangeNumber("4, 7"));
+        randomNumber.changePosition(Arrays.asList(4,7));
 
         int beforeIndex4 = beforeChange.indexOf(4);
         int beforeIndex7 = beforeChange.indexOf(7);
