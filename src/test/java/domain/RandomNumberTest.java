@@ -12,10 +12,8 @@ class RandomNumberTest {
 
     @Test
     void 중복_검사() {
-        List<Integer> randomNumber = this.randomNumber.createNumber();
-        Set<Integer> validateNumber = new HashSet<>(randomNumber);
-
-        Assertions.assertThat(randomNumber.size()).isEqualTo(validateNumber.size());
+        Set<Integer> validateNumber = new HashSet<>(randomNumber.getRandomNumber());
+        Assertions.assertThat(randomNumber.getRandomNumber().size()).isEqualTo(validateNumber.size());
     }
 
 }
