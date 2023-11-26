@@ -1,13 +1,9 @@
 package domain;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -32,5 +28,4 @@ class RandomNumberTest {
         assertEquals(beforeIndex4, randomNumber.getRandomNumber().indexOf(7));
         assertEquals(beforeIndex7, randomNumber.getRandomNumber().indexOf(4));
     }
-
 }
